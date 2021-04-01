@@ -1,0 +1,175 @@
+# GLOBAL VARIABLES :---
+
+# This will keep track of your balance/remaining balance.
+Balance = 0 
+
+#This will keep track if you have an account or not, True if yes and False if no, /
+# if not it won't let you use other options except 1.Create account and 5.Exit.
+Acct_Status = None 
+
+
+# Seperate while loops and else statements, have been used for seperate functions, in program.
+
+
+# LET'S START :---
+
+print("\nThis is State Bank of India. How can we help you?")
+delivery_boy = input("""
+Menu :--
+ENTER : FOR
+   1  : Create account
+   2  : Deposit Cash
+   3  : Withdraw Cash 
+   4  : Check balance
+   5  : Exit
+\nEnter here: """)
+
+
+#1 CREATE ACCOUNT 
+
+if int(delivery_boy) == int(1):
+    print("#1 CREATE ACCOUNT")
+    print("\n")
+    print("For creating an account fill-in the details asked below!")
+    print("\n")
+    name_holder = input("Enter your full name: ")
+    email_holder = input("Enter your email id: ")
+
+    set_pass = input("Enter a 4 digit Password: ")
+    while len(str(set_pass)) < 4 or len(str(set_pass)) > 4:
+        print("Length of password should be 4! Try Again!")
+        set_pass = input("Enter a 4 digit Password: ")
+
+    print("\n")
+    input("Thank you! for opening an account with us.") 
+
+    Acct_Status = True
+
+    delivery_boy = input("""
+Menu :--
+ENTER : FOR
+   1  : Create account
+   2  : Deposit Cash
+   3  : Withdraw Cash 
+   4  : Check balance
+   5  : Exit
+\nEnter here: """)
+
+    
+
+while Acct_Status:
+
+    #2 DEPOSIT CASH
+    if int(delivery_boy) == int(2):
+
+        print("#2 DEPOSIT CASH")
+        x = int(input("How much would you like to deposit(₹)? "))
+        Balance = Balance + x
+        print("Closing Balance =", Balance)
+
+        delivery_boy = input("""
+    Menu :--
+    ENTER : FOR
+    1  : Create account
+    2  : Deposit Cash
+    3  : Withdraw Cash 
+    4  : Check balance
+    5  : Exit
+    \nEnter here: """)
+
+else:
+    print("Oops! Looks like you don't have an account with us. Enter '1' to Create an Account.") 
+
+    delivery_boy = input("""
+    Menu :--
+    ENTER : FOR
+    1  : Create account
+    2  : Deposit Cash
+    3  : Withdraw Cash 
+    4  : Check balance
+    5  : Exit
+    \nEnter here: """)
+
+
+
+while Acct_Status:
+
+    #3 WITHDRAW CASH
+    if int(delivery_boy) == int(3):
+
+        print("#3 WITHDRAW CASH")
+        y = int(input("How much would you like to withdraw(₹)? "))
+        Balance = Balance - y
+        print("Closing balance =", Balance) 
+
+        delivery_boy = input("""
+    Menu :--
+    ENTER : FOR
+    1  : Create account
+    2  : Deposit Cash
+    3  : Withdraw Cash 
+    4  : Check balance
+    5  : Exit
+    \nEnter here: """)
+
+else:
+    print("Oops! Looks like you don't have an account with us. Enter '1' to Create an Account.") 
+
+    delivery_boy = input("""
+    Menu :--
+    ENTER : FOR
+    1  : Create account
+    2  : Deposit Cash
+    3  : Withdraw Cash 
+    4  : Check balance
+    5  : Exit
+    \nEnter here: """)
+
+
+
+while Acct_Status:
+
+    #4 CHECK BALANCE
+    if int(delivery_boy) == int(4):
+
+        print("#4 CHECK BALANCE")
+        email_holder_2 = input("Enter your email id: ")
+        set_pass_2 = input("Enter your 4 digit Password: ")
+
+        if email_holder == email_holder_2 and set_pass == set_pass_2: 
+            print(Balance)
+
+        while email_holder != email_holder_2 and set_pass != set_pass_2:
+            print("Wrong email/password! Try Again!") 
+            email_holder_2 = input("Enter your email id: ")
+
+        delivery_boy = input("""
+    Menu :--
+    ENTER : FOR
+    1  : Create account
+    2  : Deposit Cash
+    3  : Withdraw Cash 
+    4  : Check balance
+    5  : Exit
+    \nEnter here: """)
+
+else:
+    print("Oops! Looks like you don't have an account with us. Enter '1' to Create an Account.") 
+
+    delivery_boy = input("""
+    Menu :--
+    ENTER : FOR
+    1  : Create account
+    2  : Deposit Cash
+    3  : Withdraw Cash 
+    4  : Check balance
+    5  : Exit
+    \nEnter here: """)
+
+
+
+#5 EXIT
+if int(delivery_boy) == int(5):
+    print("#5 EXIT")
+    print("Exiting")
+
